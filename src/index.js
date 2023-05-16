@@ -34,7 +34,6 @@ export const makeStatus = (file1, file2) => {
     if(_.has(file1, key) && !_.has(file2, key)) finish.push({key: key, value: file1[key], status: 'File1'});
     if(_.has(file2, key) && !_.has(file1, key)) finish.push({key: key, value: file2[key], status: 'File2'});
   });
-  console.log(finish);
   return finish;
 };
 
