@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { readFileSync } from 'node:fs';
+import { readFileSync, stat } from 'node:fs';
 
 
 //футкция для сравнения объектов
@@ -45,11 +45,16 @@ export const notAsame = (path1, path2) => {
   const objFile2 = JSON.parse(toFile2);
   if (isEqual(objFile1, objFile2)) return JSON.stringify(objFile1);
   const status = makeStatus(objFile1, objFile2).map((obj) => {
-    if (obj.status === 'File1') return `${['- ' + obj.key]}: ${obj.value}`;
-    if (obj.status === 'same') return `${['  ' + obj.key]}: ${obj.value}`;
-    if (obj.status === 'File2') return `${['+ ' + obj.key]}: ${obj.value}`;
+    const statuses = {
+      default: ' ',
+      deleted: '-',
+      added: '+',
+    };
+    if (obj.status === 'File1') return `${statuses.deleted} ${obj.key}: ${obj.value}`;
+    if (obj.status === 'same') return `${statuses.default} ${obj.key}: ${obj.value}`;
+    if (obj.status === 'File2') return `${statuses.added}  ${obj.key}: ${obj.value}`;
     if (obj.status === 'samekey') {
-      const newString = `${['- ' + obj.key]}: ${obj.value1}\n${['+ ' + obj.key]}: ${obj.value2}`; 
+      const newString = `${statuses.deleted} ${obj.key}: ${obj.value1}\n${statuses.added} ${obj.key}: ${obj.value2}`; 
       return newString;
     }
   });
