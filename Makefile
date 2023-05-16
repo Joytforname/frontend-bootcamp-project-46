@@ -1,2 +1,2 @@
 diff:
-		node gendiff.js -h
+		node bin/gendiff.js -h
