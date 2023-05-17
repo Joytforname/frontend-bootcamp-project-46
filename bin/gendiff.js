@@ -8,7 +8,7 @@ program
   .description('Compares two files and shows a difference.')
   .option('-f, --format <type>', 'output format')
   .arguments('<filepath1> <filepath2>')
-  .action(notAsame);
+  .action((arg1, arg2) => console.log(notAsame(arg1, arg2)));
 
 program.parse();
 

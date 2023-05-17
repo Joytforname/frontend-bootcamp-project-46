@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { readFileSync } from 'node:fs';
+import { readFileSync } from 'fs';
 
 // футкция для сравнения объектов
 export function isEqual(object1, object2) {
@@ -60,6 +60,7 @@ export const notAsame = (path1, path2) => {
       const newString = `${statuses.deleted} ${obj.key}: ${obj.value1}\n${statuses.added} ${obj.key}: ${obj.value2}`;
       return newString;
     }
+    return 'error';
   });
-  console.log(`{\n${status.join('\n')}\n}`);
+  return (`{\n${status.join('\n')}\n}`);
 };
