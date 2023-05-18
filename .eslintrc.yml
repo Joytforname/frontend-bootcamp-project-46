@@ -13,5 +13,6 @@ rules:
   - error 
   - ignorePackages 
   - js: always 
+  consistent-return: 0
   
 

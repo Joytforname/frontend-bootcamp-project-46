@@ -1,6 +1,5 @@
 import _ from 'lodash';
-import { readFileSync } from 'fs';
-import { formatParse } from '../src/parsers.js';
+import { formatParse } from './parsers.js';
 
 // футкция для сравнения объектов
 export function isEqual(object1, object2) {
