@@ -15,9 +15,9 @@ test('formatParse', () => {
     timeout: 50,
   });
   expect(formatParse('./__fixtures__/file1.yml')).toEqual({
-    host: 'hexlet.io,',
-    timeout: '50,',
-    proxy: '123.234.53.22,',
+    host: 'hexlet.io',
+    timeout: 50,
+    proxy: '123.234.53.22',
     follow: false,
   });
 });
