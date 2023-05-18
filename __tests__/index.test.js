@@ -24,4 +24,5 @@ test('formatParse', () => {
 
 test('isEqual', () => {
   expect(isEqual(sample2, sample2)).toEqual(true);
+  expect(isEqual(sample2, sample1)).toEqual(false);
 });
