@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { readFileSync } from 'fs';
+import { formatParse } from '../src/parsers.js';
 
 // футкция для сравнения объектов
 export function isEqual(object1, object2) {
@@ -42,10 +43,8 @@ export const makeStatus = (file1, file2) => {
 
 // финальный конструктор
 export const notAsame = (path1, path2) => {
-  const toFile1 = readFileSync(path1, 'utf-8');
-  const toFile2 = readFileSync(path2, 'utf-8');
-  const objFile1 = JSON.parse(toFile1);
-  const objFile2 = JSON.parse(toFile2);
+  const objFile1 = formatParse(path1);
+  const objFile2 = formatParse(path2);
   if (isEqual(objFile1, objFile2)) return JSON.stringify(objFile1);
   const status = makeStatus(objFile1, objFile2).map((obj) => {
     const statuses = {

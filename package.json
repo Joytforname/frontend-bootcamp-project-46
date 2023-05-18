@@ -12,6 +12,7 @@
   "dependencies": {
     "@npmcli/config": "^6.1.6",
     "commander": "^10.0.1",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
