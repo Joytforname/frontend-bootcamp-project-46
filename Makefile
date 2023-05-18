@@ -1,4 +1,8 @@
 diff:
 		node bin/gendiff.js -h
 lint:
-		npx eslint .		
+		npx eslint .	
+install:
+		npm ci
+test:
+		npx jest
