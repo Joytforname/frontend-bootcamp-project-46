@@ -4,4 +4,5 @@
 ### Tests and linter:
 [![lintest](https://github.com/Joytforname/frontend-bootcamp-project-46/actions/workflows/lintest.yml/badge.svg)](https://github.com/Joytforname/frontend-bootcamp-project-46/actions/workflows/lintest.yml)
 
+### How it works:
 https://asciinema.org/a/6KFzACpts8T3EoN2OBSFZse3A
