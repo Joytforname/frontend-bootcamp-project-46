@@ -5,4 +5,4 @@ lint:
 install:
 		npm ci
 test:
-		npx jest
+		npx jest --coverage
