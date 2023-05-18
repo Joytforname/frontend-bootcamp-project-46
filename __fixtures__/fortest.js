@@ -1,4 +1,4 @@
-export const sample1 = `{
+const sample1 = `{
   - follow: false
     host: hexlet.io
   - proxy: 123.234.53.22
@@ -6,3 +6,5 @@ export const sample1 = `{
   + timeout: 20
   + verbose: true
 }`;
+
+export default sample1;
