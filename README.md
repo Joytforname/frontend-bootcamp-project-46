@@ -5,7 +5,7 @@
 [![lintest](https://github.com/Joytforname/frontend-bootcamp-project-46/actions/workflows/lintest.yml/badge.svg)](https://github.com/Joytforname/frontend-bootcamp-project-46/actions/workflows/lintest.yml)
 
 ### How it works:
-https://asciinema.org/a/6KFzACpts8T3EoN2OBSFZse3A
+https://asciinema.org/a/25J00NTmTUv5oQQmT2egbRbEa
 
 ### Maintainability:
 [![Maintainability](https://api.codeclimate.com/v1/badges/7c423066f16d0f4687fb/maintainability)](https://codeclimate.com/github/Joytforname/frontend-bootcamp-project-46/maintainability)
