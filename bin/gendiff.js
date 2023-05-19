@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { notAsame } from '../src/index.js';
+import final from '../src/index.js';
 
 const program = new Command();
 
@@ -8,7 +8,7 @@ program
   .description('Compares two files and shows a difference.')
   .option('-f, --format <type>', 'output format')
   .arguments('<filepath1> <filepath2>')
-  .action((arg1, arg2) => console.log(notAsame(arg1, arg2)));
+  .action((arg1, arg2) => console.log(final(arg1, arg2)));
 
 program.parse();
 
