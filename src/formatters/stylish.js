@@ -20,7 +20,6 @@ const stringify = (objToString, depth) => {
 
 const stylish = (objstatuses) => {
   const iter = (node, depth) => {
-    console.log(depth);
     const strings = [];
   node.forEach((obj) => {
     const statuses = {
