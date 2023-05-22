@@ -20,6 +20,7 @@ const stringify = (objToString, depth) => {
 
 const stylish = (objstatuses) => {
   const iter = (node, depth) => {
+    console.log(depth);
     const strings = [];
   node.forEach((obj) => {
     const statuses = {
@@ -30,11 +31,6 @@ const stylish = (objstatuses) => {
     if (obj.status === 'File1') {
        strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.deleted} ${obj.key}: ${stringify(obj.value, depth +1)}`);
     }
-    else if (obj.status === 'samekey') {
-      strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.deleted} ${obj.key}: ${stringify(obj.value1, depth +1)}`);
-      strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.added} ${obj.key}: ${stringify(obj.value2, depth +1)}`);
-    }
-    
     else if (obj.status === 'File2') {
       strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.added} ${obj.key}: ${stringify(obj.value, depth +1)}`);
     }
@@ -42,7 +38,11 @@ const stylish = (objstatuses) => {
       strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.default} ${obj.key}: ${stringify(obj.value, depth +1)}`);
     }
     else if (obj.status === 'deep') {
-      strings.push(`${space.repeat(deep * depth + (deep / 2))}${obj.key}: ${stringify(stylish(obj.children), depth +1)}`);
+      strings.push(`${space.repeat(deep + depth * deep)}${obj.key}: ${iter(obj.children, depth +1)}`);
+    }
+    else if (obj.status === 'samekey') {
+      strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.deleted} ${obj.key}: ${stringify(obj.value1, depth +1)}`);
+      strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.added} ${obj.key}: ${stringify(obj.value2, depth +1)}`);
     }
   });
   const final = `{\n${strings.join('\n')}\n${space.repeat(depth * deep)}}`;
