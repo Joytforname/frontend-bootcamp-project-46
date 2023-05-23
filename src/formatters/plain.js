@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const complex = (file) => {
-  if (_.isObject(file)) return `[complex value]`;
+  if (_.isObject(file)) return '[complex value]';
   return (typeof file === 'string') ? `'${file}'` : file;
 };
 
@@ -11,9 +11,9 @@ const plain = (objstatuses) => {
     node.forEach((obj) => {
       const currentPath = (path.length === 0) ? `${obj.key}` : `${path}.${obj.key}`;
       if (obj.status === 'File1') {
-        strings.push(`Propeerty ${currentPath} was removed`);
+        strings.push(`Property '${currentPath}' was removed`);
       } else if (obj.status === 'File2') {
-        strings.push(`Propeerty ${currentPath} was added with value: ${complex(obj.value)}`);
+        strings.push(`Property '${currentPath}' was added with value: ${complex(obj.value)}`);
       } else if (obj.status === 'deep') {
         strings.push(`${iter(obj.children, currentPath)}`);
       } else if (obj.status === 'samekey') {
@@ -26,5 +26,4 @@ const plain = (objstatuses) => {
   return iter(objstatuses, '');
 };
 
-export default plain
-  
+export default plain;

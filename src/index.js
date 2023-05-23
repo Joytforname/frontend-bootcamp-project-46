@@ -3,14 +3,14 @@ import stylish from './formatters/stylish.js';
 import makeStatus from '../funcs.js';
 import plain from './formatters/plain.js';
 
-const final = (path1, path2, formatter = 'stylish') => {
+const final = (path1, path2, formatName = 'stylish') => {
   const objFile1 = formatParse(path1);
   const objFile2 = formatParse(path2);
   const statuses = makeStatus(objFile1, objFile2);
-  if (formatter === 'stylish') {
+  if (formatName === 'stylish') {
     return stylish(statuses);
   }
-  if (formatter === 'plain') {
+  if (formatName === 'plain') {
     return plain(statuses);
   }
 };
