@@ -5,8 +5,6 @@ const deep = 4;
 const space = " ";
 
 
-
-
 const stringify = (objToString, depth) => {
   if (!_.isObject(objToString)) {
   return `${objToString}`
