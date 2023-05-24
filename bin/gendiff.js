@@ -1,4 +1,4 @@
-#!/usr/bin/env node 
+#!/usr/bin/env node
 import { Command } from 'commander';
 import final from '../src/index.js';
 
@@ -12,5 +12,3 @@ program
   .action((arg1, arg2) => console.log(final(arg1, arg2, program.opts().format)));
 
 program.parse();
-
-
