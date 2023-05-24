@@ -15,25 +15,22 @@ const stringify = (objToString, depth) => {
 
 const stylish = (objstatuses) => {
   const iter = (node, depth) => {
-    const strings = [];
-    node.forEach((obj) => {
+    const strings = node.map((obj) => {
       const statuses = {
         default: ' ',
         deleted: '-',
         added: '+',
       };
-      if (obj.status === 'File1') {
-        strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.deleted} ${obj.key}: ${stringify(obj.value, depth + 1)}`);
-      } else if (obj.status === 'File2') {
-        strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.added} ${obj.key}: ${stringify(obj.value, depth + 1)}`);
-      } else if (obj.status === 'same') {
-        strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.default} ${obj.key}: ${stringify(obj.value, depth + 1)}`);
-      } else if (obj.status === 'deep') {
-        strings.push(`${space.repeat(deep + depth * deep)}${obj.key}: ${iter(obj.children, depth + 1)}`);
-      } else if (obj.status === 'samekey') {
-        strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.deleted} ${obj.key}: ${stringify(obj.value1, depth + 1)}`);
-        strings.push(`${space.repeat(deep * depth + (deep / 2))}${statuses.added} ${obj.key}: ${stringify(obj.value2, depth + 1)}`);
+      if (obj.status === 'File1') return (`${space.repeat(deep * depth + (deep / 2))}${statuses.deleted} ${obj.key}: ${stringify(obj.value, depth + 1)}`);
+      if (obj.status === 'File2') return (`${space.repeat(deep * depth + (deep / 2))}${statuses.added} ${obj.key}: ${stringify(obj.value, depth + 1)}`);
+      if (obj.status === 'same') return (`${space.repeat(deep * depth + (deep / 2))}${statuses.default} ${obj.key}: ${stringify(obj.value, depth + 1)}`);
+      if (obj.status === 'deep') return (`${space.repeat(deep + depth * deep)}${obj.key}: ${iter(obj.children, depth + 1)}`);
+      if (obj.status === 'samekey') {
+        return (`${space.repeat(deep * depth
+          + (deep / 2))}${statuses.deleted} ${obj.key}: ${stringify(obj.value1, depth
+          + 1)}\n${space.repeat(deep * depth + (deep / 2))}${statuses.added} ${obj.key}: ${stringify(obj.value2, depth + 1)}`);
       }
+      return Error;
     });
     const final = `{\n${strings.join('\n')}\n${space.repeat(depth * deep)}}`;
     return final;

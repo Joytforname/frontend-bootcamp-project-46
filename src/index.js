@@ -8,15 +8,10 @@ const final = (path1, path2, formatName = 'stylish') => {
   const objFile1 = formatParse(path1);
   const objFile2 = formatParse(path2);
   const statuses = makeStatus(objFile1, objFile2);
-  if (formatName === 'stylish') {
-    return stylish(statuses);
-  }
-  if (formatName === 'plain') {
-    return plain(statuses);
-  }
-  if (formatName === 'json') {
-    return json(statuses);
-  }
+  if (formatName === 'stylish') return stylish(statuses);
+  if (formatName === 'plain') return plain(statuses);
+  if (formatName === 'json') return json(statuses);
+  return Error;
 };
 
 export default final;
