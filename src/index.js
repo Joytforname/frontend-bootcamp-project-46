@@ -14,9 +14,6 @@ const final = (path1, path2, formatName = 'stylish') => {
   if (formatName === 'plain') {
     return plain(statuses);
   }
-  if (formatName === 'plain') {
-    return plain(statuses);
-  }
   if (formatName === 'json') {
     return json(statuses);
   }
