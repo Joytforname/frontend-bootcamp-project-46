@@ -1,4 +1,16 @@
-### Step 1
+### Step 3
+https://asciinema.org/a/TEMwgbT9Zb5OvUPGFLb8Xqnek
+
+### Step 5
+https://asciinema.org/a/7IG05bB1QQTfqNZWxKnbyoyE5
+
+### Step 6
+https://asciinema.org/a/UBuVPXumUhRzmHCQBEdXjkl6y
+
+### Step 7
+https://asciinema.org/a/86gydA5qSKFDDCo9Z8dN4UHJ4
+
+### Step 8 
 
 
 ### Hexlet tests and linter status:
