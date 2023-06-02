@@ -1,3 +1,6 @@
+### Step 1
+
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Joytforname/frontend-bootcamp-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Joytforname/frontend-bootcamp-project-46/actions)
 
@@ -9,9 +12,6 @@
 
 ### Test Coverage:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7c423066f16d0f4687fb/test_coverage)](https://codeclimate.com/github/Joytforname/frontend-bootcamp-project-46/test_coverage)
-
-### How it works:
-https://asciinema.org/a/yY6cKx93JK7WGAFFf9B69jwvO
 
 ### Setup
 
