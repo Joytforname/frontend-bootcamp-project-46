@@ -10,9 +10,6 @@ https://asciinema.org/a/UBuVPXumUhRzmHCQBEdXjkl6y
 ### Step 7
 https://asciinema.org/a/86gydA5qSKFDDCo9Z8dN4UHJ4
 
-### Step 8 
-
-
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Joytforname/frontend-bootcamp-project-46/workflows/hexlet-check/badge.svg)](https://github.com/Joytforname/frontend-bootcamp-project-46/actions)
 
